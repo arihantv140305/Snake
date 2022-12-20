@@ -3,10 +3,10 @@ from pygame.locals import *
 from random import randrange
 
 
-size = 100
+size = 20
 sep = size
 last_key = 'r'
-n = 10
+n = 3
 
 
 
