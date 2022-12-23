@@ -67,38 +67,24 @@ def check_eat(square):
         gameOn = False
 
 def add_tail(square):
-    if (square[len(square) - 1].current_direction == 'l'):
-        square.append(Square(square[len(square) - 1].pos[0] - size, square[len(square) - 1].pos[1]))
-    if (square[len(square) - 1].current_direction == 'r'):
-        square.append(Square(square[len(square) - 1].pos[0] - size, square[len(square) - 1].pos[1]))
-    if (square[len(square) - 1].current_direction == 'u'):
-        square.append(Square(square[len(square) - 1].pos[0] - size , square[len(square) - 1].pos[1] ))
-    if (square[len(square) - 1].current_direction == 'd'):
-        square.append(Square(square[len(square) - 1].pos[0] - size, square[len(square) - 1].pos[1] ))
+    square.append(Square(square[len(square) - 1].pos[0] - size, square[len(square) - 1].pos[1]))
 
-
-
- 
 pygame.init()
 
 screen = pygame.display.set_mode((800, 600))
  
 square = [Square(size-sep*i, size) for i in range(n)]
-
 square[0].surf.fill((255, 0, 0))
 
-# Use blit to put something on the screen
 put_snake(square)
 
-# Update the display using flip
 pygame.display.flip()
 
 box = Square(randrange(800/size-size)*size, randrange(600/size-size)*size)
 box.surf.fill((255,255,255))
 
-
 gameOn = True
-# Our game loop
+
 while gameOn:
 
 
